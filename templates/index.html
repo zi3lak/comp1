@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Store</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: rgb(0, 0, 0);
+            background-color: white;
+        }
+        .gallery image{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+        .computer-part {
+            border: 1px solid rgb(0, 4, 255);
+            margin: 10px 0;
+            padding: 5px;
+        }
+        .promo-price {
+            font-size: 44px;
+            font-weight: bold;
+            color: red;
+            animation: colorChange 2s infinite;
+        }
+
+        @keyframes colorChange {
+            0%   { color: red; }
+            25%  { color: blue; }
+            50%  { color: green; }
+            75%  { color: purple; }
+            100% { color: red; }
+        }
+
+        .buy-now-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>ATX Gaming Tower PC + Asrock 27" Challenger Gaming Monitor (IPS)</h1>
+    <h2>i3-12100F, 8GB 3200MHz, 500GB SSD, RTX4060 GPU, Wi-Fi6, PSU 500W, Windows 11 Home</h2>
+    <div class="gallery">
+        <!-- Example images in the gallery -->
+        <img src="https://www.spire.co.uk/images/product/CAA-SPIMT038.jpg" alt="Image 1">
+        <img src="https://www.spire.co.uk/images/product/TFT27ARCL27FF.jpg" alt="Image 2">
+        <img src="https://www.spire.co.uk/images/product/KBDESK-LOMK120.jpg" alt="Image 2">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="promo-price">Promotional Price: £979</div>
+    <a href="/buy" class="buy-now-button">Buy Now</a>
+    <h2>Computer Components:</h2>
+    <ul>
+        {% for part in parts %}
+            <li class="computer-part">
+                <img src="{{ part.image }}" alt="{{ part.name }}" style="width: 100px; height: auto;">
+                <strong>{{ part.name }}</strong>: {{ part.description }} - {{ part.specs }}
+            </li>
+        {% endfor %}
+    </ul>
+
+        <img src="https://www.spire.co.uk/lm_bespokepc/images/LM_Bespokepc_01.jpg" alt="Image 3">
+        <img src="https://www.spire.co.uk/lm_bespokepc/images/LM_Bespokepc_03.jpg" alt="Image 3">
+
+</body>
+</html>
+
